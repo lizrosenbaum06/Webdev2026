@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Form Elements</title>
+  </head>
+  <body>
+    <!-- command + / to comment in any language -->
+    <p id="#top">
+        Here is a form containg basic inpit types. For more information please see 
+            <a href="https://github.com/Kadee80/WebDev_Spring26/blob/main/Week02/README.md"
+            target="_blank"
+            >W3 Schools Tutorial
+              </a>.
+        Whenever you need to make an anchor tag but you don't have the final 
+        link/ url yet... use the <code>#</code> for your href!
+    </p>
+
+    <!-- The name attribute is important -->
+     <!-- action attribute is the scrpit or function or API end point to process the form data -->
+     <!-- 
+     get- retrive/ get data
+     post- writing to DB or sending off to REST API endpoint 
+     put- Edit/ update entry 
+     delete- deletes a record
+    -->
+    <form name="contactUs" 
+    target="_self"
+    action="userLogin.js"
+    method="POST"
+    >
+    <!-- this is an oldschool tag. grouping inputs -->
+     <fieldset>
+        <!-- Lengend is the title of this group -->
+         <legend> Simple Text Input </legend>
+         <p>
+            The box and title seen are created by fieldset and legend tags.
+            Think modern day form groups or input groups. 
+         </p>
+
+         <label for="firstName">First Name:</label>
+         <input type="text" name="firstName" id="firstName" placeHolder="John" maxlength="15" required/>
+         
+         <label for="lastName">Last Name:</label>
+         <input type="text" name="lastName" id="lastName" placeHolder="Doe" maxlength="15" required/>
+         <!-- input number type -->
+          <label for="age">Your Age:</label>
+          <input type="number"name="age" min="0"max="100" step=".01"/>
+
+          <!-- password inputs is how we hide the text with those dots, as sefulat HTML behvaiors -->
+           <label for="password">Enter a Password:</label>
+           <input type="password" name="password" id="password" minlength="10">
+
+     </fieldset>
+     <fieldset>
+      <legend>Text Area Tag</legend>
+      <p>text area tags are great for longer text answers, and sentences and 
+        paragraphs. 
+      </p>
+      <label for="whyIDM">Why did you apply to IDM?</label>
+      <textarea name="whyIDM" id="whyIDM" cols="50" rows="10"></textarea>
+     </fieldset>
+
+     <fieldset>
+      <legend>Checkboxes</legend>
+
+      <p>Check boxes allow the user to select more than one value at once. 
+        <strong>Check boxes in the same "group" have the same name, but different pre-defined values</strong> 
+      </p>
+      <label for="pets">What pets do you have?</label>
+      <br/>
+      <input type="checkbox" name="pets" value="dog"/>DOG <br/>
+      <input type="checkbox" name="pets" value="cat"/>CAT <br/>
+      <input type="checkbox" name="pets" value="chicken"/>CHICKEN <br/>
+      <input type="checkbox" name="pets" value="fish"/>FISH <br/>
+      <input type="checkbox" name="pets" value="bunny"/>BUNNY <br/>
+      <input type="checkbox" name="pets" value="rat"/>RAT <br/>
+
+     </fieldset>
+
+     <fieldset>
+      <legend>Radio Buttons</legend>
+      <p>Radio Buttons allow the user to select only one value. 
+        <strong>Radio Buttons in the same "group" have the same name, but different pre-defined values</strong> 
+      </p>
+      <label for="favePet">Which pet is your favorite?</label><br/>
+      <input type="radio" name="favePet" id="favePet" value="dog"><label>DOG</label> <br/>
+      <input type="radio" name="favePet" id="favePet" value="cat"><label>CAT</label><br/>
+      <input type="radio" name="favePet" id="favePet" value="chicken"><label>CHICKEN</label><br/>
+
+     </fieldset>
+
+     <fieldset>
+      <legend>Select Options</legend>
+      <p>Using the select and option tags you can add items to a drop down selection
+      </p>
+      <label for="state">Pick a State!</label>
+      <select name="state" id="state">
+        <option value="NH">New Hampshire</option>
+        <option value="NY">New York</option>
+        <option value="NJ">New Jersey</option>
+        <option value="NM">New Mexico</option>
+      </select>
+
+     </fieldset>
+     <p>finally we use a button to submit our form!</p>
+     <button role="button">Sign Up!</button>
+     <input type="button" name="submit" value="Submit" disabled />
+    </form>
+
+    <a href="#top">Back to Top</a>
+  </body>
+</html>
