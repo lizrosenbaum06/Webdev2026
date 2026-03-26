@@ -10,121 +10,165 @@
   src: url("2025/fonts/BeVietnamPro-Thin.ttf") format("truetype");
 }
 
-/* Base */
+
 body {
   font-family: "BeVietnam", Helvetica, Arial, sans-serif;
   background: white;
   color: black;
-  margin: 0;
-  padding: 0;
+  margin: 0; /* remove default browser margin */
+  padding: 0; /* remove default padding */
+  box-sizing: border-box; /* include padding/border in width */
 }
 
-/* Top colored header bar */
+
 .header-bar {
-  background-color: #8bdaff; /* main bar color */
-  width: 100%;
-  height: 4rem;  /* thickness of the bar */
-  display: flex;
+  background-color: #32bbfb;
+  width: 100%; /* full width */
+  height: 3rem; /* thickness of bar*/
+  display: flex; /* use flexbox */
   align-items: center;
-  justify-content: center; /* center the nav */
-  position: sticky;
+  justify-content: center;
+  position: sticky; /* stays at top*/
   top: 0;
-  z-index: 1000;
+  z-index: 1000; /* keeps it above other elements */
 }
 
-/* Centered nav inside bar */
-.header-bar .nav {
+.nav {
   display: flex;
-  gap: 5rem; /* space between links */
+  gap: 5rem; /* space between links*/
 }
 
-.header-bar .nav a {
+.nav a {
   text-decoration: none;
-  color: black; /* nav links color */
-  font-size: 1.2rem;
-  transition: opacity 0.2s;
+  color: white;
+  font-size: 1rem;
+  transition: 0.2s; /* smooth hover effect */
 }
 
-.header-bar .nav a:hover {
-  color: rgb(198, 66, 0);
+.nav a:hover {
+  color: rgb(198, 198, 198);
 }
 
-/* Optional stripe under bar */
 .top-stripe {
   width: 100%;
-  height: 0.7rem; /* stripe thickness */
-  background-color: #00ccff; /* stripe color */
+  height: 0.3rem; /* thin stripe */
+  background-color: #a9e5ff;
 }
 
-/* Page title below the bar */
 .page-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
+  color: rgb(49, 178, 238);
   font-weight: normal;
-  text-align: left;
-  margin: 0.5rem 2rem; /* spacing */
+  margin: 0.5rem 2rem;
 }
 
-/* Canvas */
+/* desktop collage format */
+
 .canvas {
   position: relative;
-  width: 100%;
-  height: 100vh;
-  top: -8rem;
-  z-index: 1;
+  width: 100%;  /* full width */
+  height: 100vh; /* full screen height */
+  top: -7rem; /* move all images up */
+
 }
 
-/* Projects */
+/* projects */
 .project {
-  position: absolute;
+  position: absolute; /* manual placement */
   text-decoration: none;
 }
 
 .img-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: flex; /* use flexbox */
+  flex-direction: column; /* stack image + caption */
+  align-items: flex-start;/* align left */
 }
 
 .project img {
-  display: block;
-  width: 16vw;
-  max-width: 300px;
-  height: auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block; /* remove inline spacing */
+  width: 16vw; /* responsive width */
+  max-width: 300px; /* prevent too large */
+  height: auto; /* keep proportions */
+  transition: transform 0.3s ease;
 }
 
 .project img:hover {
-  transform: scale(1.1) rotate(-1deg);
+  transform: scale(1.1) rotate(-1deg); /* enlarge + slight tilt */
   cursor: pointer;
-  box-shadow: 0 0 0 3px #ff6a00;
+
 }
 
-/* Captions */
+/* captions */
 .caption {
   font-size: 0.7rem;
-  color: #ffa200;
-  font-family: Helvetica, Arial, sans-serif;
-  text-decoration: none !important;
+  color: #1bbfe8;
   margin: 0.3rem;
   font-weight: 100;
 }
 
+/* caption positioning variations */
 .caption-bottom-left { order: 2; align-self: flex-start; }
 .caption-bottom-right { order: 2; align-self: flex-end; }
 .caption-top-left { order: -1; align-self: flex-start; }
 .caption-top-right { order: -1; align-self: flex-end; }
 
-/* Sizes */
+/* image sizes */
 .small img { width: 10vw; }
 .medium img { width: 14vw; }
 .large img { width: 18vw; }
+
+/* mobile version */
+
+@media (max-width: 768px) {
+
+  .small img { width: 40%; }
+  .medium img { width: 50%; }
+  .large img { width: 100%; }
+
+
+  .canvas {
+    position: static; /* remove absolute layout */
+    height: auto; 
+    display: grid; /* switch to grid layout */
+    grid-template-columns: 1fr; /* single column */
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .project {
+    position: static; 
+  }
+
+  .project img {
+    margin: 0 auto; /* center all images */
+  }
+
+  .img-wrapper {
+    align-items: center;
+    width: 100%;
+  }
+
+  .caption {
+    text-align: center; /* center text */
+    align-self: center !important; /* override left/right rules */
+  }
+
+  .nav {
+    gap: 2rem;
+  }
+
+  .page-title {
+    margin: 1rem;
+    font-size: 1.3rem;
+  }
+}
 
 </style>
 </head>
 
 <body>
 
-<!-- Top colored bar with centered nav -->
+<!-- Header -->
 <div class="header-bar">
   <div class="nav">
     <a href="index.html">home</a>
@@ -133,13 +177,11 @@ body {
   </div>
 </div>
 
-<!-- Optional stripe under bar -->
 <div class="top-stripe"></div>
 
-<!-- Page title under bar -->
 <h1 class="page-title">projects of 2025</h1>
 
-<!-- Collage Canvas -->
+<!-- Canvas -->
 <div class="canvas">
 
 <a href="2025/campfilm_2025.html" class="project large" style="top:17vh; left:2vw;">
@@ -180,7 +222,7 @@ body {
 <a href="2025/indigodying_2025.html" class="project large" style="top:17vh; left:52vw;">
   <div class="img-wrapper">
     <img src="2025/img_2025/indigodying3.jpg">
-    <div class="caption">shibori dying</div>
+    <div class="caption">shibori dyeing</div>
   </div>
 </a>
 
@@ -191,7 +233,7 @@ body {
   </div>
 </a>
 
-<a href="2025/placemats_2025.html" class="project medium" style="top:72vh; left:47vw;">
+<a href="2025/placemats_2025.html" class="project medium" style="top:75vh; left:47vw;">
   <div class="img-wrapper">
     <img src="2025/img_2025/placemats2.jpg">
     <div class="caption caption-top-left">sewing placemats</div>
