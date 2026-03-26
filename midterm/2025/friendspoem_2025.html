@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Project Page</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Font */
+@font-face {
+  font-family: "BeVietnam";
+  src: url("fonts/BeVietnamPro-Thin.ttf") format("truetype");
+}
+
+body {
+  font-family: "BeVietnam", Helvetica, Arial, sans-serif;
+  color: black;
+  background: white;
+  padding: 2vw;
+}
+
+/* Back link */
+.back {
+  color: black;
+  text-decoration: none;
+  font-size: 1.5rem;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+/* Grid Layout */
+.project {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2vw;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Text */
+.date {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.poem1,
+.poem2 {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Images */
+.images {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vw;
+}
+
+.images img {
+  width: 100%;
+  height: auto;
+}
+
+/* -------- RESPONSIVE -------- */
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .project {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Phone */
+@media (max-width: 600px) {
+  .project {
+    grid-template-columns: 1fr;
+  }
+
+  .poem1,
+  .poem2 {
+    font-size: 1rem;
+  }
+
+  .back {
+    font-size: 1.2rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<a href="../2025.html" class="back">2025</a>
+
+<main class="project">
+
+  <!-- TEXT 1 -->
+  <section>
+    <h1 class="date">June 2025</h1>
+    <div class="poem1">
+      <p>
+I’ve been engaging and accepting<br>
+That every word I speak will be forgotten<br>
+And every word I write will be lost<br>
+Every thought I have is not new<br>
+And every emotion is simply a moment
+<br><br>
+I’ve been walking in the cold<br>
+Trying to remember what it was like<br>
+When I carried a piece of you with me
+<br><br>
+In the notes that I kept<br>
+Or the cadence of my voice<br>
+The way you take your time<br>
+Your thought and your grace
+<br><br>
+I’m remembering a time when I would think for a moment<br>
+Before replying
+<br><br>
+I’m trying to forgive myself for forgetting every word I have spoken<br>
+Every word I have written
+<br><br>
+Accepting that distance means forgetting details<br>
+It means saying things I don’t really mean<br>
+Because I didn’t give myself time to think
+<br><br>
+But it also means tapping my feet when I laugh<br>
+Skipping the third step<br>
+And holding onto movie tickets.
+<br><br>
+The people I meet seem to change me<br>
+Like they’re pressing they’re fingers into clay
+      </p>
+    </div>
+  </section>
+
+  <!-- IMAGES 1 -->
+  <section class="images">
+    <img src="img_2025/friendspoem2.JPG">
+    <img src="img_2025/friendspoem6.JPG">
+    <img src="img_2025/friendspoem4.JPG">
+  </section>
+
+  <!-- TEXT 2 -->
+  <section>
+    <div class="poem2">
+      <p>
+Some people press so deep they’ve created chasms in my body<br>
+And some only leave a finger print<br>
+And by now I’m covered in craters <br><br>
+
+Layer after layer,<br>
+Some morph into others<br>
+Some get wiped away<br>
+And some remain untouched
+<br><br>
+I’ve been thinking about old friends<br>
+And the impressions that they left behind
+<br><br>
+The reason that I love going to the movies<br>
+Drinking iced matcha<br>
+Having trader Joe’s for dinner<br>
+Listening to cat Stevens<br>
+And hugging the wind
+<br><br>
+I forget all the words I speak<br>
+And all the words I write<br>
+I forget why I skip the 3rd step<br>
+But I still do
+<br><br>
+And I still think of you<br>
+When I need to take my time<br>
+When I want my words to matter<br>
+When I need to remember:<br>
+“all life deserves love, and kindness, and forgiveness”
+<br><br>
+I still remember those words<br>
+I wonder when I will forget<br>
+Or what I have already forgotten<br>
+But don’t realize is missing
+      </p>
+    </div>
+  </section>
+
+  <!-- IMAGES 2 -->
+  <section class="images">
+    <img src="img_2025/friendspoem5.JPG">
+    <img src="img_2025/friendspoem1.JPG">
+    <img src="img_2025/friendspoem8.JPG">
+  </section>
+
+</main>
+
+</body>
+</html>
