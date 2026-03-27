@@ -1,152 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>2025</title>
+<meta charset="UTF-8">
+<title>2025</title>
 
-  <style>
-    @font-face {
-      font-family: "BeVietnam";
-      src: url("2025/fonts/BeVietnamPro-Thin.ttf") format("truetype");
-      font-weight: normal;
-      font-style: normal;
-    }
+<style>
+@font-face {
+  font-family: "BeVietnam";
+  src: url("2025/fonts/BeVietnamPro-Thin.ttf") format("truetype");
+}
 
-    body {
-      font-family: "BeVietnam", Helvetica, Arial, sans-serif;
-      background: white;
-      color: black;
-      margin: 0;
-      padding: 40px;
-    }
 
-    /* top-left text */
-    .home-link {
-      text-decoration: none;
-      color: black;
-      font-size: 1rem;
-      display: block;
-      margin-bottom: 8px;
-    }
+body {
+  font-family: "BeVietnam", Helvetica, Arial, sans-serif;
+  background: white;
+  color: black;
+  margin: 0; /* remove default browser margin */
+  padding: 0; /* remove default padding */
+  box-sizing: border-box; /* include padding/border in width */
+}
 
-    h1 {
-      font-size: 2rem;
-      font-weight: normal;
-      margin: 0 0 40px 0;
-    }
 
-    /* container for absolute positioning */
-    .canvas {
-      position: relative;
-      width: 100%;
-      height: 1200px; /* adjust if you need more vertical space */
-    }
+.header-bar {
+  background-color: #32bbfb;
+  width: 100%; /* full width */
+  height: 3rem; /* thickness of bar*/
+  display: flex; /* use flexbox */
+  align-items: center;
+  justify-content: center;
+  position: sticky; /* stays at top*/
+  top: 0;
+  z-index: 1000; /* keeps it above other elements */
+}
 
-    /* all project images */
-    .project {
-      position: absolute;
-    }
+.nav {
+  display: flex;
+  gap: 5rem; /* space between links*/
+}
 
-    .project img {
-      width: 180px; /* change size per image if you want */
-      height: auto;
-      display: block;
-    }
-  </style>
+.nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  transition: 0.2s; /* smooth hover effect */
+}
+
+.nav a:hover {
+  color: rgb(198, 198, 198);
+}
+
+.top-stripe {
+  width: 100%;
+  height: 0.3rem; /* thin stripe */
+  background-color: #a9e5ff;
+}
+
+.page-title {
+  font-size: 1.5rem;
+  color: rgb(49, 178, 238);
+  font-weight: normal;
+  margin: 0.5rem 2rem;
+}
+
+/* desktop collage format */
+
+.canvas {
+  position: relative;
+  width: 100%;  /* full width */
+  height: 100vh; /* full screen height */
+  top: -7rem; /* move all images up */
+
+}
+
+/* projects */
+.project {
+  position: absolute; /* manual placement */
+  text-decoration: none;
+}
+
+.img-wrapper {
+  display: flex; /* use flexbox */
+  flex-direction: column; /* stack image + caption */
+  align-items: flex-start;/* align left */
+}
+
+.project img {
+  display: block; /* remove inline spacing */
+  width: 16vw; /* responsive width */
+  max-width: 300px; /* prevent too large */
+  height: auto; /* keep proportions */
+  transition: transform 0.3s ease;
+}
+
+.project img:hover {
+  transform: scale(1.1) rotate(-1deg); /* enlarge + slight tilt */
+  cursor: pointer;
+
+}
+
+/* captions */
+.caption {
+  font-size: 0.7rem;
+  color: #1bbfe8;
+  margin: 0.3rem;
+  font-weight: 100;
+}
+
+/* caption positioning variations */
+.caption-bottom-left { order: 2; align-self: flex-start; }
+.caption-bottom-right { order: 2; align-self: flex-end; }
+.caption-top-left { order: -1; align-self: flex-start; }
+.caption-top-right { order: -1; align-self: flex-end; }
+
+/* image sizes */
+.small img { width: 10vw; }
+.medium img { width: 14vw; }
+.large img { width: 18vw; }
+
+/* mobile version */
+
+@media (max-width: 768px) {
+
+  .small img { width: 40%; }
+  .medium img { width: 50%; }
+  .large img { width: 100%; }
+
+
+  .canvas {
+    position: static; /* remove absolute layout */
+    height: auto; 
+    display: grid; /* switch to grid layout */
+    grid-template-columns: 1fr; /* single column */
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .project {
+    position: static; 
+  }
+
+  .project img {
+    margin: 0 auto; /* center all images */
+  }
+
+  .img-wrapper {
+    align-items: center;
+    width: 100%;
+  }
+
+  .caption {
+    text-align: center; /* center text */
+    align-self: center !important; /* override left/right rules */
+  }
+
+  .nav {
+    gap: 2rem;
+  }
+
+  .page-title {
+    margin: 1rem;
+    font-size: 1.3rem;
+  }
+}
+
+</style>
 </head>
 
 <body>
 
-  <a href="index.html" class="home-link">← Home</a>
-  <h1>2025</h1>
-
-  <div class="canvas">
-
-    <!-- PROJECT 1 -->
-    <a href="2025/campfilm_2025.html"
-       class="project"
-       style="top: 40px; left: 80px;">
-      <img src="project1.jpg" alt="">
-    </a>
-
-    <!-- PROJECT 2 -->
-    <a href="2025/caterpillarshirt_2025.html"
-       class="project"
-       style="top: 120px; left: 340px;">
-      <img src="project2.jpg" alt="">
-    </a>
-
-    <!-- PROJECT 3 -->
-    <a href="2025/ciaradoodle_2025.html"
-       class="project"
-       style="top: 260px; left: 160px;">
-      <img src="project3.jpg" alt="">
-    </a>
-
-    <!-- PROJECT 4 -->
-    <a href="2025/doodlearchive_2025.html"
-       class="project"
-       style="top: 80px; left: 620px;">
-      <img src="project4.jpg" alt="">
-    </a>
-
-    <!-- PROJECT 5 -->
-    <a href="2025/fionapple_2025.html"
-       class="project"
-       style="top: 360px; left: 480px;">
-      <img src="project5.jpg" alt="">
-    </a>
-
-    <!-- PROJECT 6 -->
-    <a href="2025/friendspoem_2025.html"
-       class="project"
-       style="top: 520px; left: 120px;">
-      <img src="project6.jpg" alt="">
-    </a>
-
-    <!-- PROJECT 7 -->
-    <a href="2025/indigodying_2025.html"
-       class="project"
-       style="top: 460px; left: 360px;">
-      <img src="project7.jpg" alt="">
-    </a>
-
-    <!-- PROJECT 8 -->
-    <a href="2025/megpainting_2025.html"
-       class="project"
-       style="top: 220px; left: 820px;">
-      <img src="project8.jpg" alt="">
-    </a>
-
-    <!-- PROJECT 9 -->
-    <a href="2025/mollymusicvideo_2025.html"
-       class="project"
-       style="top: 620px; left: 640px;">
-      <img src="project9.jpg" alt="">
-    </a>
-
-    <!-- PROJECT 10 -->
-    <a href="2025/placemats_2025.html"
-       class="project"
-       style="top: 740px; left: 200px;">
-      <img src="project10.jpg" alt="">
-    </a>
-
-    <!-- PROJECT 11 -->
-    <a href="2025/rocknecklaces_2025.html"
-       class="project"
-       style="top: 820px; left: 520px;">
-      <img src="project11.jpg" alt="">
-    </a>
-
-    <!-- PROJECT 12 -->
-    <a href="2025/sallyshirt_2025.html"
-       class="project"
-       style="top: 900px; left: 820px;">
-      <img src="project12.jpg" alt="">
-    </a>
-
+<!-- Header -->
+<div class="header-bar">
+  <div class="nav">
+    <a href="index.html">home</a>
+    <a href="about.html">about</a>
+    <a href="2025.html">2025</a>
   </div>
+</div>
+
+<div class="top-stripe"></div>
+
+<h1 class="page-title">projects of 2024</h1>
+
+<!-- Canvas -->
+<div class="canvas">
+
+<a href="2024/bolinas_2024.html" class="project large" style="top:17vh; left:2vw;">
+  <div class="img-wrapper">
+    <img src="2024/img_2024/bolinas5.JPG">
+    <div class="caption caption-bottom-right">bolinas, CA</div>
+  </div>
+</a>
+
+<a href="2024/centralpark_2024.html" class="project medium" style="top:26vh; left:21vw;">
+  <div class="img-wrapper">
+    <img src="2024/img_2024/centralpark6.JPG">
+    <div class="caption caption-top-left">central park</div>
+  </div>
+</a>
+
+<a href="2024/collages_2024.html" class="project large" style="top:70vh; left:5vw;">
+  <div class="img-wrapper">
+    <img src="2024/img_2024/collages3.jpeg">
+    <div class="caption">collages</div>
+  </div>
+</a>
+
+<a href="2024/lastday_2024.html" class="project medium" style="top:49vh; left:12vw;">
+  <div class="img-wrapper">
+    <img src="2024/img_2024/lastday3.jpeg">
+    <div class="caption">last day</div>
+  </div>
+</a>
+
+<a href="2024/luckyshirts_2024.html" class="project small" style="top:15vh; left:71vw;">
+  <div class="img-wrapper">
+    <img src="2024/img_2024/luckyshirts2.jpg">
+    <div class="caption caption-bottom-right">lucky shirts</div>
+  </div>
+</a>
+
+<a href="2024/mexico_2024.html" class="project large" style="top:17vh; left:52vw;">
+  <div class="img-wrapper">
+    <img src="2024/img_2024/mexico22.JPG">
+    <div class="caption">trip to mexico</div>
+  </div>
+</a>
+
+<a href="2024/painting_2024.html" class="project small" style="top:29vh; left:41vw;">
+  <div class="img-wrapper">
+    <img src="2024/img_2024/painting2.jpeg">
+    <div class="caption caption-bottom-right">painting</div>
+  </div>
+</a>
+
+<a href="2024/paintroom_2024.html" class="project medium" style="top:75vh; left:47vw;">
+  <div class="img-wrapper">
+    <img src="2024/img_2024/paintroom2.jpeg">
+    <div class="caption caption-top-left">paintroom</div>
+  </div>
+</a>
+
+<a href="2024/promdress_2024.html" class="project large" style="top:64vh; left:62vw;">
+  <div class="img-wrapper">
+    <img src="2024/img_2024/promdress1.jpeg">
+    <div class="caption caption-bottom-left">prom dress</div>
+  </div>
+</a>
+
+<a href="2024/randomknits_2024.html" class="project large" style="top:50vh; left:28vw;">
+  <div class="img-wrapper">
+    <img src="2024/img_2024/randomknits5.jpeg">
+    <div class="caption caption-top-left">knitting</div>
+  </div>
+</a>
+
+<a href="2024/sadnesspoem_2024.html" class="project large" style="top:36vh; left:78vw;">
+  <div class="img-wrapper">
+    <img src="2024/img_2024/sadnesspoem.jpeg">
+    <div class="caption">poem</div>
+  </div>
+</a>
+
+<a href="2024/singing_2024.html" class="project small" style="top:65vh; left:84vw;">
+  <div class="img-wrapper">
+    <img src="2024/img_2024/singing1.JPG">
+    <div class="caption caption-top-right">singing</div>
+  </div>
+</a>
+
+</div>
 
 </body>
 </html>
+
+
