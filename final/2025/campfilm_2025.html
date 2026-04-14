@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>2025 Project Gallery</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    @font-face {
+      font-family: "BeVietnam";
+      src: url("fonts/BeVietnamPro-Thin.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body {
+      font-family: "BeVietnam", Helvetica, Arial, sans-serif;
+      color: black;
+      background: white;
+    }
+
+    .back-link {
+      display: inline-block;
+      color: rgb(6, 140, 181);
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .project {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding: 35px 120px;
+    }
+
+    .sidebar {
+    margin: 50px 0 0 120px;
+}
+
+
+    .date {
+      font-size: 1.2rem;
+      font-weight: normal;
+      margin: 0;
+      margin-top: 40px;
+    }
+
+    .caption {
+      font-size: 0.82rem;
+      line-height: 1.2;
+      text-align: center;
+      margin-top: 8px;
+      max-width: 245px;
+    }
+
+
+    .images {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .images img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* responsive */
+    @media (max-width: 1000px) {
+      .project {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="sidebar">
+  <a href="../2025.html" class="back-link">← back to projects</a>
+
+  <h1 class="date">March 2025</h1>
+</div>
+
+<main class="project">
+
+  <!-- COLUMN 1 -->
+  <section class="images">
+    <div>
+      <img src="img_2025/campfilm1.jpeg" alt="">
+      <div class="caption"></div>
+    </div>
+    <div>
+      <img src="img_2025/campfilm2.jpeg" alt="">
+      <div class="caption"></div>
+    </div>
+    <div>
+      <img src="img_2025/campfilm3.jpeg" alt="">
+      <div class="caption"></div>
+    </div>
+  </section>
+
+  <!-- COLUMN 2 -->
+  <section class="images">
+    <div>
+      <img src="img_2025/campfilm4.jpeg" alt="">
+      <div class="caption"></div>
+    </div>
+    <div>
+      <img src="img_2025/campfilm5.jpeg" alt="">
+      <div class="caption"></div>
+    </div>
+    <div>
+      <img src="img_2025/campfilm6.jpeg" alt="">
+      <div class="caption"></div>
+    </div>
+  </section>
+
+  <!-- COLUMN 3 -->
+  <section class="images">
+    <div>
+      <img src="img_2025/campfilm7.jpeg" alt="">
+      <div class="caption"></div>
+    </div>
+    <div>
+      <img src="img_2025/campfilm8.jpeg" alt="">
+      <div class="caption"></div>
+    </div>
+    <div>
+      <img src="img_2025/campfilm10.jpeg" alt="">
+      <div class="caption"></div>
+    </div>
+  </section>
+
+  <!-- COLUMN 4 -->
+  <section class="images">
+    <div>
+      <img src="img_2025/campfilm9.jpeg" alt="">
+      <div class="caption"></div>
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>

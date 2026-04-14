@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>2025</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  background: white;
+  color: black;
+}
+
+.white-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: white;
+  z-index: 1000;
+}
+
+.page-title {
+  position: fixed;
+  top: 40px;
+  left: 160px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  z-index: 1100;
+}
+
+.page-title-2 {
+  position: fixed;
+  top: 47px;
+  left: 40px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  z-index: 1100;
+}
+
+.nav {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  z-index: 1100;
+}
+
+.menu-button {
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.dropdown {
+  position: absolute;
+  right: 0;
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: 0.3s ease;
+  pointer-events: none;
+}
+
+.dropdown.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown a {
+  display: block;
+  font-size: 1.2rem;
+  color: black;
+  text-decoration: none;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+
+.dropdown a:hover {
+  color: darkred;
+}
+
+.home-image {
+  position: fixed;
+  top: 100px; /* sits under white bar */
+  left: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+.home-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.home-image-2{
+  position: fixed;
+  top: 150px;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.home-image-2 img{
+  position: absolute;  
+  width: 40%;
+  left: 60%;
+  height: auto;
+}
+
+
+.canvas {
+   position: relative;
+  width: 100%;
+  min-height: 120vh;
+  z-index: 1;
+}
+
+.project {
+  position: absolute;
+  z-index: 2;
+}
+
+.project img {
+  display: block;
+  width: 16vw;
+  max-width: none;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.project img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.decor {
+  position: absolute;
+  z-index: 2;
+}
+
+.decor img {
+  display: block;
+  width: 16vw;
+  max-width: 300px;
+  height: auto;
+}
+
+.xxxxsmall img { width: 3vw; }
+.xxxsmall img { width: 5vw; }
+.xxsmall img { width: 9vw; }
+.xsmall img { width: 12vw; }
+.small img { width: 18vw; }
+.bigsmall img { width: 21vw; }
+.medium img { width: 24vw; }
+.large img { width: 28vw; }
+.xlarge img { width: 35vw; }
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .canvas {
+    position: static;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1rem;
+    margin-top: 120px;
+  }
+
+  .project {
+    position: static;
+  }
+
+  .project img {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .nav {
+    right: 20px;
+    top: 20px;
+  }
+
+  .page-title {
+    left: 20px;
+    top: 20px;
+    font-size: 1.3rem;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="white-bar"></div>
+<div class="page-title">2024</div>
+<div class="page-title-2">projects of</div>
+
+
+<div class="nav">
+  <div class="menu-button" onclick="toggleMenu()">menu</div>
+  <div class="dropdown" id="dropdown">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="2025.html">2025 Projects</a>
+    <a href="2024.html">2024 Projects</a>
+  </div>
+</div>
+
+<div class="home-image">
+  <img src="2024/2024back.jpg" alt="Background">
+</div>
+
+
+<div class="canvas">
+
+<a href="2024/luckyshirts_2024.html" class="project bigsmall" style="top:15vh; left:80vw;">
+  <div class="img-wrapper">
+    <img src="2024/img_2024/luckyshirts2.png">
+  </div>
+</a>
+
+<a href="2024/bolinas_2024.html" class="project small" style="top:12vh; left:0vw;">
+  <div class="img-wrapper">
+    <img src="2024/img_2024/bolinas3.png">
+  </div>
+</a>
+
+<a href="2024/centralpark_2024.html" class="project bigsmall" style="top:15vh; left:20vw;">
+  <div class="img-wrapper">
+    <img src="2024/img_2024/centralpark7.JPG">
+  </div>
+</a>
+
+<a href="2024/collages_2024.html" class="project small" style="top:50vh; left:0vw;">
+  <div class="img-wrapper">
+    <img src="2024/img_2024/collages3.jpg">
+  </div>
+</a>
+
+<a href="2024/lastday_2024.html" class="project small" style="top:29vh; left:65vw;">
+  <div class="img-wrapper">
+    <img src="2024/img_2024/lastday3-2.jpg">
+  </div>
+</a>
+
+<a href="2024/promdress_2024.html" class="project small" style="top:58vh; left:23vw;">
+  <div class="img-wrapper">
+    <img src="2024/img_2024/promdress1.jpeg">
+  </div>
+</a>
+
+<a href="2024/singing_2024.html" class="project small" style="top:74vh; left:82vw;">
+  <div class="img-wrapper">
+    <img src="2024/img_2024/singing1.JPG">
+  </div>
+</a>
+
+<a href="2024/mexico_2024.html" class="project small" style="top:18vh; left:45vw;">
+  <div class="img-wrapper">
+    <img src="2024/img_2024/mexico22.JPG">
+  </div>
+</a>
+
+<a href="2024/randomknits_2024.html" class="project xlarge" style="top:55vh; left:54vw;">
+  <div class="img-wrapper">
+    <img src="2024/img_2024/randomknits5.png">
+  </div>
+</a>
+
+<a href="2024/painting_2024.html" class="project xsmall" style="top:55vh; left:85vw;">
+  <div class="img-wrapper">
+    <img src="2024/img_2024/painting2-2.jpg">
+  </div>
+</a>
+
+<a href="2024/paintroom_2024.html" class="project small" style="top:37vh; left:5vw;">
+  <div class="img-wrapper">
+    <img src="2024/img_2024/pastels.png">
+  </div>
+</a>
+
+<a href="2024/sadnesspoem_2024.html" class="project xsmall" style="top:73.5vh; left:40vw;">
+  <div class="img-wrapper">
+    <img src="2024/img_2024/sadnesspoem.jpeg">
+  </div>
+</a>
+
+
+<a class="project xsmall" style="top:80vh; left:13svw;">
+  <img src="2025/img_2025/star1.png">
+</a>
+
+<a class="project xxsmall" style="top:20vh; left:78svw;">
+  <img src="2025/img_2025/star1.png">
+</a>
+
+<a class="project xxxsmall" style="top:40vh; left:0vw;">
+  <img src="2025/img_2025/star2.png">
+</a>
+
+<a class="project xxxxsmall" style="top:67vh; left:81vw;">
+  <img src="2025/img_2025/star2.png">
+</a>
+
+<a class="project xxsmall" style="top:63vh; left:38vw;">
+  <img src="2025/img_2025/star3.png">
+</a>
+
+<a class="project xsmall" style="top:42vh; left:89svw;">
+  <img src="2024/img_2024/camera.png">
+
+  <a class="project xsmall" style="top:39vh; left:32svw;">
+  <img src="2024/img_2024/bolinas5.JPG">
+</a>
+
+<a class="project xxsmall" style="top:29vh; left:38.5svw;">
+  <img src="2024/img_2024/star.png">
+</a>
+
+</div>
+
+
+<script>
+function toggleMenu() {
+  document.getElementById("dropdown").classList.toggle("show");
+}
+
+window.addEventListener("click", function(e) {
+  const menu = document.getElementById("dropdown");
+  const button = document.querySelector(".menu-button");
+  if (!button.contains(e.target) && !menu.contains(e.target)) {
+    menu.classList.remove("show");
+  }
+});
+</script>
+
+</body>
+</html>
+
+
