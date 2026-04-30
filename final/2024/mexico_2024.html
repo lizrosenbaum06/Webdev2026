@@ -1,93 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>2024</title>
-  <style>
-    @font-face {
-      font-family: "BeVietnam";
-      src: url("fonts/BeVietnamPro-Thin.ttf") format("truetype");
-      font-weight: normal;
-      font-style: normal;
-    }
+<meta charset="UTF-8">
+<title>2025</title>
 
-    body {
-      font-family: "BeVietnam", Helvetica, Arial, sans-serif;
-      color: black;
-      background: white;
-      padding: 40px 120px;
-    }
-
-    a.back-link {
-      display: inline-block;
-      color: rgb(6, 140, 181);
-      text-decoration: none;
-      font-size: 1rem;
-      margin-bottom: 20px;
-    }
-
-
-    h1.date {
-      font-size: 1.2rem;
-      font-weight: normal;
-      margin-bottom: 40px;
-    }
-
-    .project {
-    display: inline-block;
-    margin: 0 20px 20px 0; /* spacing */
-    vertical-align: top;
-  }
-
-  .project img {
-    width: 350px;
-    height: auto;
+<style>
+body {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  background: white;
 }
 
-  @media (max-width: 768px) {
-    .project {
-    flex-direction: column;
+/* HEADER */
+.page-title {
+  position: fixed;
+  top: 70px;
+  left: 40px;
+  font-size: 1.5rem;
+  z-index: 1000;
+}
+
+.back-link {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  color: black;
+  text-decoration: none;
+  font-size: 1rem;
+  z-index: 1000;
+}
+
+/* GRID */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 140px 40px 40px;
+}
+
+/* SQUARE ITEMS */
+.item {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* HOVER */
+.item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.item:hover img {
+  transform: scale(1.08);
+}
+
+.item:hover::after {
+  opacity: 1;
+}
+
+/* MODAL */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white; /* 👈 changed from black */
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+/* CLOSE BUTTON LEFT */
+.close {
+  position: absolute;
+  top: 25px;
+  left: 35px; /* 👈 moved to left */
+  color: black; /* 👈 visible on white */
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-
-
-  </style>
+@media (max-width: 500px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 </head>
+
 <body>
 
-  <a href="../2024.html" class="back-link">← back to projects</a>
+<a href="../2024.html" class="back-link">← back</a>
+<div class="page-title">march 2025</div>
 
-  <!-- Month -->
-  <h1 class="date"> December 2024 </h1>
+<main class="gallery">
+  <div class="item"><img src="img_2024/mexico1.JPG"></div>
+  <div class="item"><img src="img_2024/mexico2.JPG"></div>
+  <div class="item"><img src="img_2024/mexico3.JPG"></div>
+  <div class="item"><img src="img_2024/mexico4.JPG"></div>
+  <div class="item"><img src="img_2024/mexico5.JPG"></div>
+  <div class="item"><img src="img_2024/mexico6.JPG"></div>
+  <div class="item"><img src="img_2024/mexico7.JPG"></div>
+  <div class="item"><img src="img_2024/mexico8.JPG"></div>
+  <div class="item"><img src="img_2024/mexico9.JPG"></div>
+  <div class="item"><img src="img_2024/mexico10.JPG"></div>
+  <div class="item"><img src="img_2024/mexico11.JPG"></div>
+  <div class="item"><img src="img_2024/mexico12.JPG"></div>
+  <div class="item"><img src="img_2024/mexico13.JPG"></div>
+  <div class="item"><img src="img_2024/mexico14.JPG"></div>
+  <div class="item"><img src="img_2024/mexico15.JPG"></div>
+  <div class="item"><img src="img_2024/mexico16.JPG"></div>
+  <div class="item"><img src="img_2024/mexico17.JPG"></div>
+  <div class="item"><img src="img_2024/mexico18.JPG"></div>
+  <div class="item"><img src="img_2024/mexico19.JPG"></div>
+  <div class="item"><img src="img_2024/mexico20.JPG"></div>
+  <div class="item"><img src="img_2024/mexico21.JPG"></div>
+  <div class="item"><img src="img_2024/mexico22.JPG"></div>
+  <div class="item"><img src="img_2024/mexico23.JPG"></div>
+</main>
 
-  <main class="project">
- <img src="img_2024/mexico1.JPG" alt="photo 1">
-  <img src="img_2024/mexico2.JPG" alt="photo 1">
-   <img src="img_2024/mexico3.JPG" alt="photo 1">
-  <img src="img_2024/mexico4.JPG" alt="photo 1">
-  <img src="img_2024/mexico5.JPG" alt="photo 1">
-  <img src="img_2024/mexico6.JPG" alt="photo 1">
-   <img src="img_2024/mexico7.JPG" alt="photo 1">
-  <img src="img_2024/mexico8.JPG" alt="photo 1">
-  <img src="img_2024/mexico9.JPG" alt="photo 1">
-    <img src="img_2024/mexico10.JPG" alt="photo 1">
-  <img src="img_2024/mexico11.JPG" alt="photo 1">
-    <img src="img_2024/mexico12.JPG" alt="photo 1">
-  <img src="img_2024/mexico13.JPG" alt="photo 1">
-    <img src="img_2024/mexico14.JPG" alt="photo 1">
-  <img src="img_2024/mexico15.JPG" alt="photo 1">
-    <img src="img_2024/mexico16.JPG" alt="photo 1">
-  <img src="img_2024/mexico17.JPG" alt="photo 1">
-  <img src="img_2024/mexico18.JPG" alt="photo 1">
-  <img src="img_2024/mexico19.JPG" alt="photo 1">
-  <img src="img_2024/mexico20.JPG" alt="photo 1">
-  <img src="img_2024/mexico21.JPG" alt="photo 1">
-  <img src="img_2024/mexico22.JPG" alt="photo 1">
-  <img src="img_2024/mexico23.JPG" alt="photo 1">
-  
- 
-  </main>
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <span class="close" id="close">&times;</span>
+  <img id="modal-img">
+</div>
+
+<script>
+const items = document.querySelectorAll(".item");
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modal-img");
+const closeBtn = document.getElementById("close");
+
+items.forEach(item => {
+  const img = item.querySelector("img");
+
+  item.addEventListener("click", () => {
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
+</script>
 
 </body>
 </html>

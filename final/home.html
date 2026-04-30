@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Home</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  background: white;
+  overflow: hidden;
+}
+
+/* BACKGROUND */
+.home-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.home-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.canvas {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+}
+
+.small-window {
+  position: absolute;
+  width: 18%;
+  height: 250px;
+  background: rgba(66, 193, 232, 0.8);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.small-content {
+  padding: 20px;
+  font-size: 1.2rem;
+  color: rgb(5, 116, 13);
+}
+
+.small-content button {
+  margin-top: 30px;
+  padding: 6px 8px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  background: rgba(5, 116, 12, 0.683);
+  color: rgba(53, 221, 255, 0.663);
+  border-radius: 4px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.small-window-2 {
+  position: absolute;
+  width: 17%;
+  height: 240px;
+  background: rgba(160, 206, 8, 0.7);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.small-content-2 {
+  padding: 10px;
+  font-size: 0.7rem;
+  color: #960996;
+}
+
+/* CALENDAR (added) */
+.calendar {
+  font-size: 14px;
+}
+
+.calendar-header {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 11px;
+  text-align: center;
+}
+
+.calendar-grid div {
+  padding: 2px 0;
+}
+
+.today {
+  border: 1.5px solid #650f55;
+  border-radius: 50%;
+}
+
+.chrome-window {
+  position: absolute;
+  width: 61%;
+  height: 600px;
+  background: rgba(255, 255, 255, 0.748);
+  border-radius: 2px;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.35);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.chrome-bar {
+  height: 40px;
+  background: linear-gradient(to bottom, #eeeeee, #d6d6d6);
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  gap: 6px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.red { background: #fa0000; }
+.yellow { background: #ffa200; }
+.green { background: #14af0e; }
+
+.address {
+  flex: 1;
+  height: 22px;
+  background: white;
+  border-radius: 10px;
+  margin-left: 8px;
+}
+
+.chrome-content {
+  height: calc(100% - 40px);
+  display: flex;
+  flex-direction: column;
+  background: #ffffff3a;
+}
+
+.inner-white-bar {
+  height: 80px;
+  background: rgba(255, 255, 255, 0.508);
+  display: flex;
+  align-items: center;
+  padding-left:30px;
+  position: relative;
+}
+
+.inner-page-title {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.inner-body {
+  flex: 1;
+  display: flex;
+  padding: 20px;
+}
+
+.left-image {
+  width: 50px;
+  height: auto;
+}
+
+.right-image img {
+  width: 500px;
+  height: auto;
+  display: block;
+}
+
+.left-text {
+  width: 60%;
+  font-size: 0.9rem;
+}
+
+/* DESKTOP ICONS */
+.project {
+  position: absolute;
+  z-index: 3;
+  width: 115px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.project img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.outlined {
+  border: 3.5px solid rgba(255, 255, 255);
+}
+
+.no-outline {
+  border: none;
+}
+
+.project span {
+  display: block;
+  margin-top: 15px;
+  font-size: 0.8rem;
+  color: rgb(255,255,255);
+  line-height: 1.2;
+  text-shadow: 1px 1px 3px rgba(0,0,0,1);
+}
+
+.project:hover img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  body { overflow: auto; }
+
+  .canvas {
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .project {
+    position: static;
+    margin: 0 auto;
+  }
+
+  .chrome-window {
+    display: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="home-image">
+  <img src="homepage.jpg" alt="Background">
+</div>
+
+<div class="canvas">
+
+<!-- CHROME WINDOW -->
+<div class="chrome-window" style="top: 8vh; left: 4vw;">
+  <div class="chrome-bar">
+    <div class="dot red"></div>
+    <div class="dot yellow"></div>
+    <div class="dot green"></div>
+    <div class="address"></div>
+  </div>
+
+  <div class="chrome-content">
+    <div class="inner-white-bar">
+      <div class="inner-page-title">homepage</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="small-window" style="top: 65vh; left: 15vw; z-index: 2;">
+  <div class="small-content">
+    <div>not sure where to start?</div>
+    <button id="randomBtn">???</button>
+  </div>
+</div>
+
+<!-- CALENDAR WINDOW -->
+<div class="small-window-2" style="top: 5vh; left: 67vw; z-index: 2;">
+  <div class="small-content-2">
+    <div class="calendar">
+      <div class="calendar-header" id="calendar-header"></div>
+      <div class="calendar-grid" id="calendar-grid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- DESKTOP ICONS -->
+<a href="about.html" class="project" style="top:42vh; left:75vw;">
+  <img src="img/aboutme1.jpeg" class="outlined">
+  <span>(1) about me.jpg</span>
+</a>
+
+<a href="index.html" class="project" style="top:70vh; left:85vw;">
+  <img src="img/homepage.JPG" class="outlined">
+  <span>(2) homescreen.jpg</span>
+</a>
+
+<a href="2025.html" class="project" style="top:7vh; left:87vw;">
+  <img src="img/folder.webp" class="no-outline">
+  <span>2025 projects</span>
+</a>
+
+<a href="2024.html" class="project" style="top:27vh; left:87vw;">
+  <img src="img/folder.webp" class="no-outline">
+  <span>2024 projects</span>
+</a>
+
+<a href="calendar.html" class="project" style="top:47vh; left:87vw;">
+  <img src="img/folder.webp" class="no-outline">
+  <span>calendar</span>
+</a>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+const header = document.getElementById("calendar-header");
+const grid = document.getElementById("calendar-grid");
+
+const today = new Date();
+const year = today.getFullYear();
+const month = today.getMonth();
+const date = today.getDate();
+
+const months = [
+"JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE",
+"JULY","AUGUST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER"
+];
+
+header.textContent = months[month] + " " + year;
+
+const days = ["S","M","T","W","T","F","S"];
+days.forEach(d => {
+  const el = document.createElement("div");
+  el.textContent = d;
+  grid.appendChild(el);
+});
+
+const firstDay = new Date(year, month, 1).getDay();
+const totalDays = new Date(year, month + 1, 0).getDate();
+
+for (let i = 0; i < firstDay; i++) {
+  grid.appendChild(document.createElement("div"));
+}
+
+for (let i = 1; i <= totalDays; i++) {
+  const el = document.createElement("div");
+  el.textContent = i;
+
+  if (i === date) {
+    el.classList.add("today");
+  }
+
+  grid.appendChild(el);
+}
+
+// RANDOM PROJECT BUTTON
+const projects = [
+  "2025/campfilm_2025.html",
+  "2025/caterpillarshirt_2025.html",
+  "2025/friendspoem_2025.html",
+  "2025/ciaradoodle_2025.html",
+  "2025/doodlearchive_2025.html",
+  "2025/indigodying_2025.html",
+  "2025/placemats_2025.html",
+  "2025/rocknecklaces_2025.html",
+  "2025/sallyshirt_2025.html",
+  "2025/megpainting_2025.html",
+  "2025/fionapple_2025.html",
+  "2025/mollymusicvideo_2025.html", 
+  "2024/luckyshirts_2024.html",
+    "2024/bolinas_2024.html",
+"2024/centralpark_2024.html",
+"2024/collages_2024.html",
+"2024/lastday_2024.html",
+"2024/promdress_2024.html",
+"2024/singing_2024.html",
+"2024/mexico_2024.html",
+"2024/randomknits_2024.html",
+"2024/painting_2024.html",
+"2024/paintroom_2024.html",
+"2024/sadnesspoem_2024.html", 
+
+];
+
+document.getElementById("randomBtn").addEventListener("click", () => {
+  const random = projects[Math.floor(Math.random() * projects.length)];
+  window.location.href = random;
+});
+
+
+</script>
+
+</body>
+</html>

@@ -4,33 +4,32 @@
   <meta charset="UTF-8">
   <title>2024</title>
   <style>
-    @font-face {
-      font-family: "BeVietnam";
-      src: url("fonts/BeVietnamPro-Thin.ttf") format("truetype");
-      font-weight: normal;
-      font-style: normal;
-    }
-
+    
     body {
-      font-family: "BeVietnam", Helvetica, Arial, sans-serif;
-      color: black;
-      background: white;
-      padding: 40px 120px;
-    }
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+}
 
-    a.back-link {
-      display: inline-block;
-      color: rgb(6, 140, 181);
-      text-decoration: none;
-      font-size: 1rem;
-      margin-bottom: 20px;
-    }
+/* TITLE */
+.page-title {
+  position: fixed;
+  top: 70px;
+  left: 40px;
+  font-size: 1.5rem;
+  margin: 0;
+  z-index: 1000;
+}
 
+a.back-link {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  margin: 0;
+  font-size: 1rem;
+  z-index: 1000;
 
-    h1.date {
-      font-size: 1.2rem;
-      font-weight: normal;
-      margin-bottom: 40px;
     }
 
     .project {
@@ -40,8 +39,9 @@
   }
 
   .project img {
-    width: 350px;
+    width: 300px;
     height: auto;
+    margin-top: 120px
 }
 
   @media (max-width: 768px) {
@@ -51,17 +51,14 @@
 }
 
 
-
-  </style>
+</style>
 </head>
 <body>
 
-  <a href="../2024.html" class="back-link">← back to projects</a>
+<a href="../2024.html" class="back-link">← back</a>
+<div class="page-title">march 2025</div>
 
-  <!-- Month -->
-  <h1 class="date"> August 2024 </h1>
-
-  <main class="project">
+   <main class="project">
  <img src="img_2024/bolinas1.jpeg" alt="photo 1">
   <img src="img_2024/bolinas2.JPG" alt="photo 1">
    <img src="img_2024/bolinas3.JPG" alt="photo 1">
@@ -81,5 +78,7 @@
  
   </main>
 
+
 </body>
 </html>
+

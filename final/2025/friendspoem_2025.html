@@ -11,25 +11,22 @@
   box-sizing: border-box;
 }
 
-@font-face {
-  font-family: "BeVietnam";
-  src: url("fonts/BeVietnamPro-Thin.ttf") format("truetype");
-}
-
 body {
-  font-family: "BeVietnam", Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   color: black;
   background: white;
   padding: 2vw;
 }
 
-.back {
-  color: rgb(6, 133, 176);
+a.back-link {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  color: rgb(0, 0, 0);
   text-decoration: none;
-  font-size: 1 rem;
-  display: inline-block;
-  margin-bottom: 2rem;
-}
+  margin: 0;
+  font-size: 1rem;
+  z-index: 1000; }
 
 .project {
   display: grid;
@@ -39,13 +36,29 @@ body {
   margin: 0 auto;
 }
 
-.date {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
+.page-title {
+  position: fixed;
+  top: 70px;
+  left: 40px;
+  font-size: 1.5rem;
+  margin: 0;
+  z-index: 999;
+  font-weight: normal;
+}
+
+.white-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background-color: white;
+  z-index: 999;
 }
 
 .poem1,
 .poem2 {
+  margin-top: 90px;
   font-size: 0.9rem;
   line-height: 1.4;
 }
@@ -55,6 +68,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.5vw;
+  margin-top: 90px;
 }
 
 .images img {
@@ -89,13 +103,15 @@ body {
 
 <body>
 
-<a href="../2025.html" class="back">← back to projects</a>
+<a href="../2025.html" class="back-link">← back to projects</a>
+<div class="white-bar"></div>
+
 
 <main class="project">
 
   <!-- TEXT 1 -->
   <section>
-    <h1 class="date">June 2025</h1>
+    <h1 class="page-title">june 2025</h1>
     <div class="poem1">
       <p>
 I’ve been engaging and accepting<br>
@@ -133,8 +149,9 @@ Like they’re pressing they’re fingers into clay
     </div>
   </section>
 
-  <!-- IMAGES 1 -->
+
   <section class="images">
+    
     <img src="img_2025/friendspoem2.JPG">
     <img src="img_2025/friendspoem6.JPG">
     <img src="img_2025/friendspoem4.JPG">
